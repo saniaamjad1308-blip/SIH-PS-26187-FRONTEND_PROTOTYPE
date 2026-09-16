@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SurakshaNetra - Unusual Clips</title>
+
+    <link rel="stylesheet" href="unusual-clips.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOP NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-left">
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open menu">
+
+                ☰
+
+            </button>
+
+
+            <div class="brand">
+
+                <img
+                    src="LOGO.png"
+                    alt="SurakshaNetra Logo">
+
+                <span>
+                    SurakshaNetra
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="navbar-right">
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="notification-wrapper">
+
+                <button
+                    class="notification-btn"
+                    id="notificationBtn"
+                    type="button"
+                    aria-label="Notifications">
+
+                    🔔
+
+                    <span
+                        class="notification-count"
+                        id="notificationCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="notification-panel"
+                    id="notificationPanel">
+
+                    <div class="notification-header">
+
+                        <strong>
+                            Notifications
+                        </strong>
+
+                    </div>
+
+
+                    <div id="notificationList">
+
+                        <p class="no-notifications">
+                            No active alarms
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- OFFICER PROFILE -->
+
+            <div class="profile">
+
+                <div class="profile-avatar">
+
+                    <img
+                        id="profileImage"
+                        src=""
+                        alt="Officer">
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="officerName">
+                        Officer
+                    </strong>
+
+                    <span id="officerRank">
+                        Rank not set
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+   <aside id="sideNav" class="side-nav">
+
+    <div class="nav-title">COMMAND</div>
+
+    <a href="DASHBOARD.html" class="nav-item">
+        <span>▣</span> Dashboard
+    </a>
+
+    <a href="camera.html" class="nav-item">
+        <span>◉</span> Cameras
+    </a>
+
+    <a href="unusual-clips.html" class="nav-item">
+        <span>◌</span> Unusual Clips
+    </a>
+
+
+    <a href="setting.html" class="nav-item">
+        <span>⚙</span> Settings
+    </a>
+
+    <button id="managementNav"
+                class="nav-item management-nav"
+                type="button">
+
+            <span>🔒</span>
+            Management
+
+</aside>
+</aside>
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main
+        class="main-content"
+        id="mainContent">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <div>
+
+                <p class="section-label">
+                    SECURITY ARCHIVE
+                </p>
+
+                <h1>
+                    Unusual Clips
+                </h1>
+
+                <p>
+                    Permanent archive of unusual events
+                    detected by the surveillance network.
+                </p>
+
+            </div>
+
+
+            <div class="archive-status">
+
+                <span></span>
+
+                ARCHIVE ACTIVE
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ARCHIVE STATISTICS
+        ====================================== -->
+
+        <section class="archive-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ▶
+                </div>
+
+                <div>
+
+                    <span>
+                        TOTAL CLIPS
+                    </span>
+
+                    <strong id="totalClips">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon critical">
+                    ⚠
+                </div>
+
+                <div>
+
+                    <span>
+                        CRITICAL
+                    </span>
+
+                    <strong id="criticalClips">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon warning">
+                    !
+                </div>
+
+                <div>
+
+                    <span>
+                        HIGH / WARNING
+                    </span>
+
+                    <strong id="warningClips">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <span>
+                        CAMERAS INVOLVED
+                    </span>
+
+                    <strong id="cameraCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ARCHIVE CONTROLS
+        ====================================== -->
+
+        <section class="archive-toolbar">
+
+            <div class="filter-tabs">
+
+                <button
+                    class="filter-btn active"
+                    data-filter="day"
+                    type="button">
+
+                    TODAY
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="week"
+                    type="button">
+
+                    WEEK
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="month"
+                    type="button">
+
+                    MONTH
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="year"
+                    type="button">
+
+                    YEAR
+
+                </button>
+
+
+                <button
+                    class="filter-btn"
+                    data-filter="all"
+                    type="button">
+
+                    ALL
+
+                </button>
+
+            </div>
+
+
+            <div class="archive-tools">
+
+                <select
+                    id="severityFilter"
+                    class="archive-select">
+
+                    <option value="all">
+                        All Severity
+                    </option>
+
+                    <option value="critical">
+                        Critical
+                    </option>
+
+                    <option value="high">
+                        High
+                    </option>
+
+                    <option value="medium">
+                        Medium
+                    </option>
+
+                    <option value="low">
+                        Low
+                    </option>
+
+                </select>
+
+
+                <select
+                    id="areaFilter"
+                    class="archive-select">
+
+                    <option value="all">
+                        All Areas
+                    </option>
+
+                </select>
+
+
+                <button
+                    id="refreshClips"
+                    class="refresh-btn"
+                    type="button">
+
+                    ↻ REFRESH
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ARCHIVE INFORMATION
+        ====================================== -->
+
+        <div class="archive-info">
+
+            <span>
+                <strong id="visibleClipCount">
+                    0
+                </strong>
+                clips displayed
+            </span>
+
+            <span>
+                Events remain archived after alarms
+                are acknowledged or resolved.
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================
+             CLIP ARCHIVE
+        ====================================== -->
+
+        <section
+            class="archive-container"
+            id="archiveContainer">
+
+            <!-- Clip groups/cards generated
+                 by unusual-clips.js -->
+
+        </section>
+
+
+
+        <!-- =====================================
+             EMPTY STATE
+        ====================================== -->
+
+        <div>
+            class="empty-state"
+            id="emptyState"
+            style="display: none;">
+
+            <div class="empty-icon">
+                ✓
+            </div>
+
+            <h3>
+                No Unusual Clips
+            </h3>
+
+            <p>
+                No archived events match
+                the selected filters.
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         VIDEO MODAL
+    ========================================== -->
+
+    <div
+        class="video-modal-overlay"
+        id="videoModal">
+
+        <div class="video-modal">
+
+
+            <div class="video-modal-header">
+
+                <div>
+
+                    <span class="video-label">
+                        ARCHIVED SECURITY EVENT
+                    </span>
+
+                    <h2 id="videoModalTitle">
+                        Unusual Event
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="close-video"
+                    id="closeVideo"
+                    type="button">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <div class="video-container">
+
+                <video
+                    id="clipVideo"
+                    controls
+                    preload="metadata">
+
+                    Your browser does not support
+                    video playback.
+
+                </video>
+
+
+                <div
+                    class="video-placeholder"
+                    id="videoPlaceholder">
+
+                    <div class="video-placeholder-icon">
+                        ▶
+                    </div>
+
+                    <strong>
+                        VIDEO ARCHIVE
+                    </strong>
+
+                    <span>
+                        No video stream available
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="video-details">
+
+                <div>
+
+                    <span>
+                        AREA
+                    </span>
+
+                    <strong id="videoArea">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        CAMERA
+                    </span>
+
+                    <strong id="videoCamera">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        EVENT
+                    </span>
+
+                    <strong id="videoType">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SEVERITY
+                    </span>
+
+                    <strong id="videoSeverity">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TIMESTAMP
+                    </span>
+
+                    <strong id="videoTimestamp">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="notifications.js"></script>
+
+    <script src="unusual-clips.js"></script>
+
+</body>
+
+</html>

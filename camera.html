@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SurakshaNetra | Cameras</title>
+
+    <link rel="stylesheet"
+          href="cameras.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP NAVBAR
+===================================================== -->
+
+<header class="top-navbar">
+
+    <button id="menuBtn"
+            class="menu-btn">
+        ☰
+    </button>
+
+
+    <div class="brand">
+
+        <img src="LOGO.png"
+             alt="SurakshaNetra Logo">
+
+        <div class="brand-text">
+
+            <h2>SURAKSHANETRA</h2>
+
+            <span>
+                TACTICAL SURVEILLANCE SYSTEM
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ONLINE
+
+    </div>
+
+
+    <!-- Notification -->
+
+    <div class="notification-wrapper">
+
+        <button id="notificationBtn"
+                class="notification-btn">
+
+            🔔
+
+            <span id="notificationCount"
+                  class="notification-count">
+                0
+            </span>
+
+        </button>
+
+
+        <div id="notificationPanel"
+             class="notification-panel">
+
+            <div class="notification-header">
+
+                <strong>
+                    NOTIFICATIONS
+                </strong>
+
+                <button id="clearNotifications">
+                    CLEAR
+                </button>
+
+            </div>
+
+
+            <div id="notificationList"
+                 class="notification-list">
+
+                <p class="no-notifications">
+                    No new notifications
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Profile -->
+
+    <div class="profile">
+
+        <div class="profile-avatar">
+
+            <img id="profileAvatar"
+                 src=""
+                 alt="Officer">
+
+        </div>
+
+
+        <div class="profile-info">
+
+            <strong id="officerName">
+                Officer
+            </strong>
+
+            <span id="officerRank">
+                COMMAND
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<aside id="sideNav" class="side-nav">
+
+    <div class="nav-title">COMMAND</div>
+
+    <a href="DASHBOARD.html" class="nav-item">
+        <span>▣</span> Dashboard
+    </a>
+
+    <a href="camera.html" class="nav-item">
+        <span>◉</span> Cameras
+    </a>
+
+    <a href="unusual-clips.html" class="nav-item">
+        <span>◌</span> Unusual Clips
+    </a>
+
+    
+
+    <a href="setting.html" class="nav-item">
+        <span>⚙</span> Settings
+    </a>
+
+    <button id="managementNav" class="nav-item management-nav" type="button">
+        <span>🔒</span> Management
+    </button>
+
+</aside>
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main id="mainContent"
+      class="main-content">
+
+
+    <!-- PAGE HEADER -->
+
+    <div class="page-heading">
+
+        <div>
+
+            <span class="section-label">
+                SURVEILLANCE NETWORK
+            </span>
+
+            <h1>
+                Camera Monitoring
+            </h1>
+
+            <p class="page-description">
+                Access and manage all connected surveillance cameras.
+            </p>
+
+        </div>
+
+
+        <div class="camera-summary">
+
+            <div class="summary-item">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <strong id="totalCameras">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item online">
+
+                <span>
+                    ONLINE
+                </span>
+
+                <strong id="onlineCameras">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-item offline">
+
+                <span>
+                    OFFLINE
+                </span>
+
+                <strong id="offlineCameras">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         FILTER BAR
+    ================================================= -->
+
+    <div class="control-bar">
+
+
+        <div class="filters">
+
+
+            <div class="select-box">
+
+                <label>
+                    AREA
+                </label>
+
+                <select id="areaFilter">
+
+                    <option value="all">
+                        All Areas
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="select-box">
+
+                <label>
+                    STATUS
+                </label>
+
+                <select id="statusFilter">
+                    
+
+                    <option value="all">
+                        All Cameras
+                    </option>
+
+                    <option value="online">
+                        Online
+                    </option>
+
+                    <option value="offline">
+                        Offline
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         CAMERA GRID
+    ================================================= -->
+
+    <section id="cameraGrid"
+             class="camera-grid">
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     ADD CAMERA MODAL
+===================================================== -->
+
+<div id="cameraModal"
+     class="modal">
+
+
+    <div class="modal-box">
+
+
+        <button class="close-modal"
+                id="closeCameraModal">
+
+            ×
+
+        </button>
+
+
+        <span class="section-label">
+            SURVEILLANCE NETWORK
+        </span>
+
+
+        <h2>
+            Add New Camera
+        </h2>
+
+
+        <p class="modal-description">
+            Register a surveillance camera and assign it to an area.
+        </p>
+
+
+
+        <div class="input-group">
+
+            <label>
+                CAMERA ID
+            </label>
+
+            <input type="text"
+                   id="cameraIdInput"
+                   placeholder="Example: CAM-07">
+
+        </div>
+
+
+
+        <div class="input-group">
+
+            <label>
+                CAMERA NAME
+            </label>
+
+            <input type="text"
+                   id="cameraNameInput"
+                   placeholder="Example: North Gate Camera">
+
+        </div>
+
+
+
+        <div class="input-group">
+
+            <label>
+                AREA / SECTOR
+            </label>
+
+            <select id="cameraAreaInput">
+
+            </select>
+
+        </div>
+
+
+
+        <div class="input-group">
+
+            <label>
+                CAMERA LOCATION
+            </label>
+
+            <input type="text"
+                   id="cameraLocationInput"
+                   placeholder="Example: North Border Gate">
+
+        </div>
+
+
+
+        <div class="input-group">
+
+            <label>
+                CAMERA FEED IMAGE URL
+            </label>
+
+            <input type="text"
+                   id="cameraImageInput"
+                   placeholder="Optional image URL">
+
+            <small>
+                For prototype/demo use. Real CCTV feeds will be connected through the backend.
+            </small>
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+            <button id="cancelCameraBtn"
+                    class="cancel-btn">
+
+                CANCEL
+
+            </button>
+
+
+            <button id="saveCameraBtn"
+                    class="save-btn">
+
+                ADD CAMERA
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ADD AREA MODAL
+===================================================== -->
+
+<div id="areaModal"
+     class="modal">
+
+
+    <div class="modal-box small-modal">
+
+
+        <button class="close-modal"
+                id="closeAreaModal">
+
+            ×
+
+        </button>
+
+
+        <span class="section-label">
+            SECTOR MANAGEMENT
+        </span>
+
+
+        <h2>
+            Add New Area
+        </h2>
+
+
+        <p class="modal-description">
+            Create a new surveillance sector.
+        </p>
+
+
+
+        <div class="input-group">
+
+            <label>
+                AREA NAME
+            </label>
+
+            <input type="text"
+                   id="areaNameInput"
+                   placeholder="Example: Sector Golf">
+
+        </div>
+
+
+
+        <div class="input-group">
+
+            <label>
+                AREA DESCRIPTION
+            </label>
+
+            <input type="text"
+                   id="areaDescriptionInput"
+                   placeholder="Example: Northern perimeter">
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+            <button id="cancelAreaBtn"
+                    class="cancel-btn">
+
+                CANCEL
+
+            </button>
+
+
+            <button id="saveAreaBtn"
+                    class="save-btn">
+
+                ADD AREA
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CAMERA VIEW MODAL
+===================================================== -->
+
+<div id="viewerModal"
+     class="viewer-modal">
+
+
+    <div class="viewer-box">
+
+
+        <div class="viewer-header">
+
+
+            <div>
+
+                <span class="section-label">
+                    LIVE SURVEILLANCE FEED
+                </span>
+
+                <h2 id="viewerTitle">
+                    CAM-01
+                </h2>
+
+            </div>
+
+
+            <button id="closeViewer"
+                    class="viewer-close">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+
+        <div class="viewer-screen">
+
+            <img id="viewerImage"
+                 src=""
+                 alt="Camera Feed">
+
+
+            <div class="viewer-overlay">
+
+                <div class="viewer-live">
+                    ● LIVE
+                </div>
+
+                <div id="viewerCameraInfo">
+                    CAM-01
+                </div>
+
+                <div id="viewerTime">
+                    00:00:00
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="viewer-details">
+
+
+            <div>
+
+                <span>
+                    AREA
+                </span>
+
+                <strong id="viewerArea">
+                    Sector Alpha
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    LOCATION
+                </span>
+
+                <strong id="viewerLocation">
+                    North Gate
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong class="viewer-online">
+                    ● ONLINE
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script src="cameras.js"></script>
+
+</body>
+
+</html>

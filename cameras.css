@@ -1,0 +1,1876 @@
+/* =====================================================
+   SURAKSHANETRA
+   CAMERA MONITORING PAGE
+===================================================== */
+
+
+/* ==============================
+   VARIABLES
+============================== */
+
+:root {
+
+    --black: #080a09;
+
+    --dark: #0d110e;
+
+    --panel: rgba(13, 16, 14, 0.94);
+
+    --panel2: rgba(20, 24, 20, 0.94);
+
+    --green: #728c58;
+
+    --green-light: #9aae76;
+
+    --green-dark: #465735;
+
+    --red: #d94b3d;
+
+    --orange: #d88914;
+
+    --white: #e7ebe2;
+
+    --muted: #899287;
+
+    --border: rgba(150, 165, 130, 0.25);
+
+}
+
+
+/* ==============================
+   RESET
+============================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+/* ==============================
+   BODY
+============================== */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--white);
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            rgba(5, 8, 6, 0.78),
+            rgba(5, 8, 6, 0.88)
+        ),
+
+        url("ChatGPT\ Image\ Sep\ 7\,\ 2026\,\ 05_08_18\ PM.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+}
+
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.top-navbar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 68px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 0 20px;
+
+    background:
+        rgba(7, 9, 8, 0.96);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+/* ==============================
+   MENU
+============================== */
+
+.menu-btn {
+
+    width: 40px;
+
+    height: 40px;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid var(--border);
+
+    color: var(--white);
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+
+}
+
+
+.menu-btn:hover {
+
+    background:
+        rgba(114,140,88,0.15);
+
+    border-color:
+        var(--green);
+
+}
+
+
+/* ==============================
+   BRAND
+============================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.brand img {
+
+    width: 39px;
+
+    height: 39px;
+
+    object-fit: contain;
+
+}
+
+
+.brand-text h2 {
+
+    font-size: 16px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.brand-text span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* ==============================
+   SYSTEM STATUS
+============================== */
+
+.system-status {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--green-light);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #7ea35e;
+
+    box-shadow:
+        0 0 8px rgba(126,163,94,0.7);
+
+}
+
+
+/* ==============================
+   NOTIFICATION
+============================== */
+
+.notification-wrapper {
+
+    position: relative;
+
+}
+
+
+.notification-btn {
+
+    position: relative;
+
+    width: 38px;
+
+    height: 38px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,0.03);
+
+    color: var(--white);
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+
+.notification-count {
+
+    position: absolute;
+
+    top: -5px;
+
+    right: -5px;
+
+    min-width: 17px;
+
+    height: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--red);
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+
+.notification-panel {
+
+    position: absolute;
+
+    top: 48px;
+
+    right: 0;
+
+    width: 300px;
+
+    background:
+        rgba(10,12,10,0.98);
+
+    border:
+        1px solid var(--border);
+
+    display: none;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.65);
+
+}
+
+
+.notification-panel.show {
+
+    display: block;
+
+}
+
+
+.notification-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.notification-header strong {
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.notification-header button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--orange);
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+}
+
+
+.notification-list {
+
+    padding: 8px;
+
+}
+
+
+.no-notifications {
+
+    padding: 18px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+/* ==============================
+   PROFILE
+============================== */
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.profile-avatar {
+
+    width: 38px;
+
+    height: 38px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+        2px solid var(--green);
+
+    background:
+        var(--dark);
+
+}
+
+
+.profile-avatar img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.profile-info strong {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+
+.profile-info span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--green-light);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ==============================
+   SIDEBAR
+============================== */
+
+.side-nav {
+
+    position: fixed;
+
+    top: 68px;
+
+    left: 0;
+
+    width: 210px;
+
+    height: calc(100vh - 68px);
+
+    z-index: 900;
+
+    padding: 20px 12px;
+
+    background:
+        rgba(7,9,8,0.97);
+
+    border-right:
+        1px solid var(--border);
+
+    transition:
+        transform 0.25s ease;
+
+}
+
+
+.side-nav.closed {
+
+    transform:
+        translateX(-100%);
+
+}
+
+
+.nav-title {
+
+    padding:
+        0 10px 10px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.nav-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 12px;
+
+    margin-bottom: 3px;
+
+    color: #a9b0a4;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    border-left:
+        3px solid transparent;
+
+}
+
+
+.nav-item span {
+
+    width: 18px;
+
+    color: var(--green);
+
+}
+
+
+.nav-item:hover {
+
+    background:
+        rgba(114,140,88,0.10);
+
+    color: white;
+
+}
+
+
+.nav-item.active {
+
+    background:
+        rgba(114,140,88,0.15);
+
+    border-left-color:
+        var(--green-light);
+
+    color: white;
+
+}
+
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.main-content {
+
+    position: relative;
+
+    width: calc(100% - 210px);
+
+    height: calc(100vh - 68px);
+
+    margin-left: 210px;
+
+    margin-top: 68px;
+
+    padding: 20px 24px 12px;
+
+    overflow: hidden;
+
+    transition:
+        width 0.25s ease,
+        margin-left 0.25s ease;
+
+}
+
+
+.main-content.expanded {
+
+    width: 100%;
+
+    margin-left: 0;
+
+}
+
+
+/* ==============================
+   PAGE HEADING
+============================== */
+
+.page-heading {
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.section-label {
+
+    color: var(--green-light);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.page-heading h1 {
+
+    margin-top: 4px;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+}
+
+
+.page-description {
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+}
+
+
+/* ==============================
+   CAMERA SUMMARY
+============================== */
+
+.camera-summary {
+
+    display: flex;
+
+    gap: 28px;
+
+    padding-right: 8px;
+
+}
+
+
+.summary-item {
+
+    text-align: right;
+
+}
+
+
+.summary-item span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.summary-item strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 18px;
+
+}
+
+
+.summary-item.online strong {
+
+    color: var(--green-light);
+
+}
+
+
+.summary-item.offline strong {
+
+    color: var(--red);
+
+}
+
+
+/* ==============================
+   CONTROL BAR
+============================== */
+
+.control-bar {
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 7px 10px;
+
+    margin-bottom: 10px;
+
+    background:
+        rgba(9,12,10,0.94);
+
+    border:
+        1px solid var(--border);
+
+}
+
+
+.filters {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.select-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.select-box label {
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.select-box select {
+
+    min-width: 145px;
+
+    padding: 8px 10px;
+
+    background:
+        #0a0d0b;
+
+    border:
+        1px solid var(--border);
+
+    color: var(--white);
+
+    outline: none;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+}
+
+
+.select-box select:focus {
+
+    border-color:
+        var(--green);
+
+}
+
+
+/* ==============================
+   CAMERA GRID
+============================== */
+
+.camera-grid {
+
+    height: calc(100vh - 216px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    overflow: hidden;
+
+}
+
+
+/* ==============================
+   CAMERA CARD
+============================== */
+
+.camera-card {
+
+    position: relative;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    background:
+        rgba(7,10,8,0.95);
+
+    border:
+        1px solid var(--border);
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.camera-card:hover {
+
+    border-color:
+        var(--green);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.camera-card.offline {
+
+    opacity: 0.65;
+
+}
+
+
+.camera-feed {
+
+    position: relative;
+
+    height: calc(100% - 47px);
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    background:
+        #111612;
+
+}
+
+
+.camera-feed img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+
+.camera-card:hover .camera-feed img {
+
+    transform:
+        scale(1.03);
+
+}
+
+
+/* ==============================
+   FEED OVERLAY
+============================== */
+
+.feed-top {
+
+    position: absolute;
+
+    top: 9px;
+
+    left: 10px;
+
+    right: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 2;
+
+}
+
+
+.live-badge {
+
+    padding: 4px 7px;
+
+    background:
+        rgba(5,10,7,0.78);
+
+    border:
+        1px solid rgba(114,140,88,0.35);
+
+    color:
+        var(--green-light);
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.live-badge.offline {
+
+    color:
+        #d66d65;
+
+    border-color:
+        rgba(217,75,61,0.35);
+
+}
+
+
+.feed-time {
+
+    padding: 4px 6px;
+
+    background:
+        rgba(0,0,0,0.55);
+
+    color:
+        #c0c6bd;
+
+    font-size: 7px;
+
+}
+
+
+/* ==============================
+   CAMERA FOOTER
+============================== */
+
+.camera-footer {
+
+    height: 47px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 8px 11px;
+
+    background:
+        rgba(6,9,7,0.98);
+
+    border-top:
+        1px solid rgba(150,165,130,0.15);
+
+}
+
+
+.camera-info {
+
+    min-width: 0;
+
+}
+
+
+.camera-id {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.camera-status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        #7ea35e;
+
+    box-shadow:
+        0 0 6px rgba(126,163,94,0.5);
+
+}
+
+
+.camera-card.offline .camera-status-dot {
+
+    background:
+        var(--red);
+
+    box-shadow: none;
+
+}
+
+
+.camera-name {
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.camera-area {
+
+    text-align: right;
+
+}
+
+
+.camera-area span {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 7px;
+
+}
+
+
+.camera-area strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--green-light);
+
+    font-size: 8px;
+
+}
+
+
+/* ==============================
+   CAMERA IMAGE FALLBACK
+============================== */
+
+.feed-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(114,140,88,0.16),
+            transparent 50%
+        ),
+
+        #101510;
+
+}
+
+
+.feed-placeholder-icon {
+
+    font-size: 35px;
+
+    color:
+        var(--green);
+
+    opacity: 0.55;
+
+}
+
+
+.feed-placeholder span {
+
+    margin-top: 8px;
+
+    color:
+        var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* ==============================
+   MODAL
+============================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,0.76);
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+.modal.show {
+
+    display: flex;
+
+}
+
+
+.modal-box {
+
+    position: relative;
+
+    width: 430px;
+
+    padding: 26px;
+
+    background:
+        rgba(10,13,11,0.98);
+
+    border:
+        1px solid rgba(150,165,130,0.35);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.8);
+
+}
+
+
+.small-modal {
+
+    width: 400px;
+
+}
+
+
+.close-modal {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 14px;
+
+    width: 28px;
+
+    height: 28px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+}
+
+
+.close-modal:hover {
+
+    color: white;
+
+}
+
+
+.modal-box h2 {
+
+    margin-top: 5px;
+
+    font-size: 21px;
+
+}
+
+
+.modal-description {
+
+    margin-top: 6px;
+
+    margin-bottom: 20px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ==============================
+   INPUTS
+============================== */
+
+.input-group {
+
+    margin-bottom: 13px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--green-light);
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.input-group input,
+.input-group select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    background:
+        #080b09;
+
+    border:
+        1px solid var(--border);
+
+    color: white;
+
+    outline: none;
+
+    font-size: 11px;
+
+}
+
+
+.input-group input:focus,
+.input-group select:focus {
+
+    border-color:
+        var(--green);
+
+}
+
+
+.input-group input::placeholder {
+
+    color:
+        #626a60;
+
+}
+
+
+.input-group small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color:
+        #626a60;
+
+    font-size: 7px;
+
+    line-height: 1.4;
+
+}
+
+
+/* ==============================
+   MODAL BUTTONS
+============================== */
+
+.modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+}
+
+
+.cancel-btn,
+.save-btn {
+
+    padding: 10px 15px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
+
+
+.cancel-btn {
+
+    background:
+        transparent;
+
+    border:
+        1px solid var(--border);
+
+    color:
+        var(--muted);
+
+}
+
+
+.save-btn {
+
+    background:
+        var(--green);
+
+    border:
+        1px solid var(--green);
+
+    color:
+        #080b08;
+
+}
+
+
+.save-btn:hover {
+
+    background:
+        var(--green-light);
+
+}
+
+
+/* ==============================
+   CAMERA VIEWER
+============================== */
+
+.viewer-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 6000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,0.84);
+
+    backdrop-filter:
+        blur(6px);
+
+}
+
+
+.viewer-modal.show {
+
+    display: flex;
+
+}
+
+
+.viewer-box {
+
+    width: 850px;
+
+    max-width: 90vw;
+
+    background:
+        #090c0a;
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,0.9);
+
+}
+
+
+.viewer-header {
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 15px;
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.viewer-header h2 {
+
+    margin-top: 3px;
+
+    font-size: 15px;
+
+}
+
+
+.viewer-close {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+}
+
+
+.viewer-close:hover {
+
+    color: white;
+
+}
+
+
+.viewer-screen {
+
+    position: relative;
+
+    height: 470px;
+
+    background:
+        #060807;
+
+    overflow: hidden;
+
+}
+
+
+.viewer-screen img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.viewer-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 15px;
+
+    pointer-events: none;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+}
+
+
+.viewer-live {
+
+    padding: 5px 9px;
+
+    background:
+        rgba(5,10,7,0.8);
+
+    border:
+        1px solid rgba(114,140,88,0.4);
+
+    color:
+        var(--green-light);
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+}
+
+
+#viewerCameraInfo {
+
+    color:
+        rgba(255,255,255,0.7);
+
+    font-size: 8px;
+
+}
+
+
+#viewerTime {
+
+    position: absolute;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    color:
+        white;
+
+    font-family:
+        monospace;
+
+    font-size: 11px;
+
+    text-shadow:
+        0 1px 4px black;
+
+}
+
+
+.viewer-details {
+
+    height: 58px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.viewer-details > div {
+
+    padding: 10px 15px;
+
+    border-right:
+        1px solid var(--border);
+
+}
+
+
+.viewer-details > div:last-child {
+
+    border-right: none;
+
+}
+
+
+.viewer-details span {
+
+    display: block;
+
+    color:
+        var(--muted);
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.viewer-details strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+}
+
+
+.viewer-online {
+
+    color:
+        var(--green-light);
+
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 1000px) {
+
+    .camera-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-template-rows:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    body {
+
+        overflow-y: auto;
+
+    }
+
+
+    .side-nav {
+
+        transform:
+            translateX(-100%);
+
+    }
+
+
+    .main-content {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 15px;
+
+        height: auto;
+
+        overflow: visible;
+
+    }
+
+
+    .page-heading {
+
+        height: auto;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .camera-summary {
+
+        display: none;
+
+    }
+
+
+    .control-bar {
+
+        height: auto;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        padding: 10px;
+
+    }
+
+
+    .filters {
+
+        flex-direction: column;
+
+    }
+
+
+    .select-box {
+
+        justify-content: space-between;
+
+    }
+
+
+    .camera-grid {
+
+        height: auto;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: none;
+
+        overflow: visible;
+
+    }
+
+
+    .camera-card {
+
+        height: 230px;
+
+    }
+
+
+    .viewer-screen {
+
+        height: 300px;
+
+    }
+
+}
+.management-nav {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-left: 3px solid transparent;
+    color: #a9b0a4;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.management-nav:hover {
+    background: rgba(114, 140, 88, 0.10);
+    color: white;
+}
+
+.management-nav:focus {
+    outline: none;
+}

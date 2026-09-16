@@ -1,0 +1,750 @@
+/* =========================================================
+   SURAKSHANETRA LOGIN
+   ========================================================= */
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #080d09;
+
+    color: #e8eee3;
+}
+
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-image:
+        url("ChatGPT\ Image\ Sep\ 7\,\ 2026\,\ 05_08_18\ PM.png");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.background-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 10, 6, 0.82),
+            rgba(5, 10, 6, 0.62),
+            rgba(5, 10, 6, 0.82)
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   TOP NAVBAR
+========================= */
+
+.navbar {
+
+    position: absolute;
+
+    top: 22px;
+    left: 28px;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.navbar img {
+
+    width: 36px;
+    height: 36px;
+
+    object-fit: contain;
+}
+
+
+.navbar span {
+
+    color: #e4eadc;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box {
+
+    width: 400px;
+
+    padding: 34px 32px 27px;
+
+    background:
+        rgba(8, 15, 9, 0.78);
+
+    border:
+
+        1px solid
+        rgba(139, 159, 113, 0.35);
+
+    border-top:
+
+        2px solid
+        rgba(154, 174, 118, 0.55);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 5px;
+
+}
+
+
+/* =========================
+   LOGIN LABEL
+========================= */
+
+.login-label {
+
+    text-align: center;
+
+    color: #8fa56f;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.login-box h1 {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #eef2e9;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.login-subtitle {
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    color: #9ba596;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group {
+
+    margin-top: 21px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #cbd2c4;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group input {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 13px;
+
+    background:
+        rgba(4, 9, 5, 0.75);
+
+    border:
+        1px solid
+        rgba(139, 159, 113, 0.25);
+
+    border-radius: 4px;
+
+    outline: none;
+
+    color: #edf2e9;
+
+    font-size: 12px;
+
+    transition: 0.25s;
+}
+
+
+.input-group input::placeholder {
+
+    color: #687165;
+}
+
+
+.input-group input:focus {
+
+    border-color: #8fa56f;
+
+    background:
+        rgba(8, 15, 9, 0.9);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(114, 140, 88, 0.08);
+}
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.login-options {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 10px;
+}
+
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #9ba596;
+
+    cursor: pointer;
+}
+
+
+.remember input {
+
+    width: 14px;
+    height: 14px;
+
+    accent-color: #728c58;
+}
+
+
+.login-options a {
+
+    color: #9aae76;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.login-options a:hover {
+
+    color: #c1d09e;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+.login-button {
+
+    width: 100%;
+
+    height: 44px;
+
+    margin-top: 23px;
+
+    border: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            90deg,
+            #52683d,
+            #728c58
+        );
+
+    color: #f1f5ed;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.login-button:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #627c49,
+            #8ba669
+        );
+
+    transform: translateY(-1px);
+}
+
+
+.login-button:active {
+
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   SECURITY LINE
+========================= */
+
+.security-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 23px;
+}
+
+
+.security-line span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(139, 159, 113, 0.15);
+}
+
+
+.security-line small {
+
+    color: #596355;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE POPUP
+   ========================================================= */
+
+.profile-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        rgba(2, 5, 3, 0.82);
+
+    backdrop-filter: blur(7px);
+}
+
+
+/* =========================
+   POPUP BOX
+========================= */
+
+.profile-popup-box {
+
+    width: 370px;
+
+    padding: 32px;
+
+    text-align: center;
+
+    background:
+        #101810;
+
+    border:
+        1px solid
+        rgba(139, 159, 113, 0.4);
+
+    border-top:
+        2px solid
+        #728c58;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.75);
+
+    animation:
+        profilePopupIn 0.25s ease;
+}
+
+
+@keyframes profilePopupIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   POPUP TITLE
+========================= */
+
+.profile-popup-box h2 {
+
+    color: #e9eee5;
+
+    font-size: 20px;
+
+    margin-bottom: 7px;
+}
+
+
+.profile-popup-box p {
+
+    color: #879184;
+
+    font-size: 11px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   PROFILE PREVIEW
+========================= */
+
+.profile-preview {
+
+    width: 105px;
+    height: 105px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    background:
+        #202a20;
+
+    border:
+        2px solid
+        #728c58;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(114, 140, 88, 0.06);
+}
+
+
+.profile-preview span {
+
+    font-size: 42px;
+
+    opacity: 0.75;
+}
+
+
+.profile-preview img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+#profileImageInput {
+
+    width: 100%;
+
+    margin-bottom: 22px;
+
+    color: #9ba596;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   POPUP BUTTONS
+========================= */
+
+.popup-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+
+.popup-buttons button {
+
+    min-width: 110px;
+
+    padding: 10px 18px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+#skipProfile {
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(139, 159, 113, 0.3);
+
+    color: #8b9487;
+}
+
+
+#continueProfile {
+
+    background: #52683d;
+
+    border:
+        1px solid
+        #728c58;
+
+    color: #edf2e9;
+}
+
+
+#skipProfile:hover {
+
+    color: white;
+
+    border-color: #728c58;
+}
+
+
+#continueProfile:hover {
+
+    background: #728c58;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .login-box {
+
+        width: 92%;
+
+        padding:
+            28px 22px 23px;
+    }
+
+    .profile-popup-box {
+
+        width: 90%;
+
+        padding: 26px 20px;
+    }
+
+    .navbar {
+
+        top: 15px;
+        left: 15px;
+    }
+
+}

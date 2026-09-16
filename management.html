@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Management | SurakshaNetra</title>
+
+    <link rel="stylesheet" href="management.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         TOP NAVBAR
+    ================================= -->
+
+    <header class="top-navbar">
+
+        <button id="menuBtn" class="menu-btn">
+            ☰
+        </button>
+
+        <div class="brand">
+            <img src="LOGO.png" alt="SurakshaNetra Logo">
+            <span>SURAKSHANETRA</span>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            SYSTEM OPERATIONAL
+        </div>
+
+        <div class="nav-right">
+
+            <!-- Notification -->
+            <button id="notificationBtn" class="notification-btn">
+                ♧
+                <span id="notificationCount" class="notification-count">0</span>
+            </button>
+
+            <!-- Profile -->
+            <div class="profile-mini">
+                <img id="profileImage" src="" alt="Officer">
+                <div>
+                    <strong id="officerName">OFFICER</strong>
+                    <small id="officerRank">RANK</small>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         SIDEBAR
+    ================================= -->
+
+    <aside id="sideNav" class="side-nav">
+
+        <div class="nav-title">
+            COMMAND
+        </div>
+
+        <a href="DASHBOARD.html" class="nav-item">
+            <span>▣</span>
+            Dashboard
+        </a>
+
+        <a href="camera.html" class="nav-item">
+            <span>◉</span>
+            Cameras
+        </a>
+
+        <a href="unusual-clips.html" class="nav-item">
+            <span>◌</span>
+            Unusual Clips
+        </a>
+
+        <a href="setting.html" class="nav-item">
+            <span>⚙</span>
+            Settings
+        </a>
+
+        <button id="managementNav"
+                class="nav-item management-nav active"
+                type="button">
+
+            <span>🔒</span>
+            Management
+
+        </button>
+
+    </aside>
+
+
+    <!-- ================================
+         MAIN CONTENT
+    ================================= -->
+
+    <main id="mainContent" class="main-content">
+
+        <!-- Page Heading -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="section-label">
+                    ADMINISTRATION
+                </div>
+
+                <h1>
+                    Management Control
+                </h1>
+
+                <p>
+                    Authorized administrative operations for
+                    surveillance infrastructure.
+                </p>
+
+            </div>
+
+            <div id="systemClock" class="system-clock">
+                --:--:--
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             MANAGEMENT WARNING
+        ================================= -->
+
+        <section class="security-banner">
+
+            <div class="security-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <strong>
+                    RESTRICTED MANAGEMENT ACCESS
+                </strong>
+
+                <p>
+                    Changes made in this section affect the
+                    surveillance system and require authorized access.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             MANAGEMENT GRID
+        ================================= -->
+
+        <section class="management-grid">
+
+
+            <!-- ============================
+                 CAMERA MANAGEMENT
+            ============================= -->
+
+            <div class="management-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-tag">
+                            INFRASTRUCTURE
+                        </span>
+
+                        <h2>
+                            Camera Management
+                        </h2>
+                    </div>
+
+                    <span class="panel-icon">
+                        ◉
+                    </span>
+
+                </div>
+
+
+                <p class="panel-description">
+
+                    Add, modify or remove surveillance
+                    cameras from the monitoring network.
+
+                </p>
+
+
+                <div class="action-list">
+
+                    <button
+                        class="management-action"
+                        id="addCameraBtn">
+
+                        <span>＋</span>
+
+                        <div>
+                            <strong>Add Camera</strong>
+                            <small>
+                                Insert a new surveillance camera
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="management-action"
+                        id="editCameraBtn">
+
+                        <span>✎</span>
+
+                        <div>
+                            <strong>Edit Camera</strong>
+                            <small>
+                                Modify existing camera information
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="management-action danger"
+                        id="deleteCameraBtn">
+
+                        <span>×</span>
+
+                        <div>
+                            <strong>Delete Camera</strong>
+                            <small>
+                                Remove a camera from the network
+                            </small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================
+                 AREA MANAGEMENT
+            ============================= -->
+
+            <div class="management-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-tag">
+                            SECTORS
+                        </span>
+
+                        <h2>
+                            Area Management
+                        </h2>
+                    </div>
+
+                    <span class="panel-icon">
+                        ◈
+                    </span>
+
+                </div>
+
+
+                <p class="panel-description">
+
+                    Manage monitored sectors and assign
+                    surveillance coverage.
+
+                </p>
+
+
+                <div class="action-list">
+
+                    <button
+                        class="management-action"
+                        id="addAreaBtn">
+
+                        <span>＋</span>
+
+                        <div>
+                            <strong>Add Area</strong>
+                            <small>
+                                Create a new monitored area
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="management-action"
+                        id="editAreaBtn">
+
+                        <span>✎</span>
+
+                        <div>
+                            <strong>Edit Area</strong>
+                            <small>
+                                Modify area information
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="management-action danger"
+                        id="deleteAreaBtn">
+
+                        <span>×</span>
+
+                        <div>
+                            <strong>Delete Area</strong>
+                            <small>
+                                Remove a monitored area
+                            </small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================
+                 UNUSUAL CLIPS
+            ============================= -->
+
+            <div class="management-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-tag">
+                            EVIDENCE
+                        </span>
+
+                        <h2>
+                            Unusual Clips
+                        </h2>
+                    </div>
+
+                    <span class="panel-icon">
+                        ◌
+                    </span>
+
+                </div>
+
+
+                <p class="panel-description">
+
+                    Manage recorded unusual events and
+                    remove archived footage when authorized.
+
+                </p>
+
+
+                <div class="action-list">
+
+                    <button
+                        class="management-action danger"
+                        id="deleteClipsBtn">
+
+                        <span>×</span>
+
+                        <div>
+                            <strong>
+                                Delete Unusual Clips
+                            </strong>
+
+                            <small>
+                                Remove selected archived evidence
+                            </small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================
+                 UID AUTHORIZATION
+            ============================= -->
+
+            <div class="management-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="panel-tag">
+                            ACCESS CONTROL
+                        </span>
+
+                        <h2>
+                            UID Authorization
+                        </h2>
+                    </div>
+
+                    <span class="panel-icon">
+                        🔐
+                    </span>
+
+                </div>
+
+
+                <p class="panel-description">
+
+                    Authorize or revoke officer UID access
+                    through the administrative system.
+
+                </p>
+
+
+                <div class="action-list">
+
+                    <button
+                        class="management-action"
+                        id="authorizeUidBtn">
+
+                        <span>＋</span>
+
+                        <div>
+                            <strong>
+                                Authorize UID
+                            </strong>
+
+                            <small>
+                                Grant management access to a UID
+                            </small>
+                        </div>
+
+                    </button>
+
+
+                    <button
+                        class="management-action danger"
+                        id="revokeUidBtn">
+
+                        <span>×</span>
+
+                        <div>
+                            <strong>
+                                Revoke UID
+                            </strong>
+
+                            <small>
+                                Remove authorization from a UID
+                            </small>
+                        </div>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================================
+             SYSTEM INFORMATION
+        ================================= -->
+
+        <section class="system-information">
+
+            <div>
+
+                <span class="info-label">
+                    ACCESS LEVEL
+                </span>
+
+                <strong>
+                    MANAGEMENT / RESTRICTED
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="info-label">
+                    AUTHORIZATION
+                </span>
+
+                <strong id="authorizationStatus">
+                    BACKEND CONTROLLED
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="info-label">
+                    SYSTEM
+                </span>
+
+                <strong>
+                    SURAKSHANETRA
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================
+             FOOTER
+        ================================= -->
+
+        <footer class="page-footer">
+
+            <span>
+                SURAKSHANETRA
+            </span>
+
+            <span>
+                RESTRICTED MANAGEMENT CONSOLE
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================================
+         PASSWORD MODAL
+    ================================= -->
+
+    <div id="passwordModal" class="modal-overlay">
+
+        <div class="password-modal">
+
+            <button
+                id="closePasswordModal"
+                class="close-modal">
+
+                ×
+
+            </button>
+
+
+            <div class="lock-symbol">
+                🔒
+            </div>
+
+
+            <div class="section-label">
+                RESTRICTED ACCESS
+            </div>
+
+
+            <h2>
+                Management Authentication
+            </h2>
+
+
+            <p>
+                Enter the authorized management password
+                to continue.
+            </p>
+
+
+            <form id="passwordForm">
+
+                <label for="managementPassword">
+                    MANAGEMENT PASSWORD
+                </label>
+
+                <input
+                    type="password"
+                    id="managementPassword"
+                    placeholder="Enter password"
+                    autocomplete="off"
+                    required
+                >
+
+
+                <div
+                    id="passwordError"
+                    class="password-error">
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="authenticate-btn">
+
+                    AUTHENTICATE
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
+    <script src="notifications.js"></script>
+    <script src="management.js"></script>
+
+</body>
+
+</html>

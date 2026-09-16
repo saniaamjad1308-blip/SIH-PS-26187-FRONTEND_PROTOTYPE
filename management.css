@@ -1,0 +1,1356 @@
+/* =========================================
+   SURAKSHANETRA MANAGEMENT
+   MANAGEMENT.CSS
+========================================= */
+
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root {
+
+    --black: #080a09;
+    --dark: #0d110e;
+
+    --panel: rgba(13, 16, 14, 0.92);
+    --panel2: rgba(20, 24, 20, 0.92);
+
+    --green: #728c58;
+    --green-light: #9aae76;
+    --green-dark: #465735;
+
+    --orange: #d88914;
+    --red: #d94b3d;
+
+    --white: #e7ebe2;
+    --muted: #899287;
+
+    --border: rgba(150, 165, 130, 0.25);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background-color: var(--black);
+
+    background-image:
+        linear-gradient(
+            rgba(5, 8, 6, 0.66),
+            rgba(5, 8, 6, 0.76)
+        ),
+        url("ChatGPT Image Sep 7, 2026, 05_08_18 PM.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: var(--white);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================
+   TOP NAVBAR
+========================================= */
+
+.top-navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(7, 10, 8, 0.96);
+
+    border-bottom: 1px solid var(--border);
+
+    z-index: 1000;
+}
+
+
+/* =========================================
+   MENU BUTTON
+========================================= */
+
+.menu-btn {
+
+    width: 55px;
+    height: 68px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.menu-btn:hover {
+
+    background: rgba(114, 140, 88, 0.10);
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    height: 100%;
+
+    padding-left: 4px;
+}
+
+
+.brand img {
+
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+}
+
+
+.brand span {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--white);
+}
+
+
+/* =========================================
+   SYSTEM STATUS
+========================================= */
+
+.system-status {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-left: 35px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+}
+
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green-light);
+
+    box-shadow:
+        0 0 8px rgba(154, 174, 118, 0.7);
+}
+
+
+/* =========================================
+   NAV RIGHT
+========================================= */
+
+.nav-right {
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 22px;
+
+    padding-right: 20px;
+}
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+.notification-btn {
+
+    position: relative;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--white);
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+
+.notification-btn:hover {
+
+    color: var(--green-light);
+}
+
+
+.notification-count {
+
+    position: absolute;
+
+    top: 1px;
+    right: 0;
+
+    min-width: 15px;
+    height: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 3px;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-mini {
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.profile-mini img {
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid var(--green-dark);
+}
+
+
+.profile-mini div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.profile-mini strong {
+
+    font-size: 10px;
+
+    color: var(--white);
+
+    letter-spacing: 0.5px;
+}
+
+
+.profile-mini small {
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.side-nav {
+
+    position: fixed;
+
+    top: 68px;
+    left: 0;
+
+    width: 210px;
+
+    height: calc(100vh - 68px);
+
+    padding: 18px 10px;
+
+    background: rgba(9, 12, 10, 0.97);
+
+    border-right: 1px solid var(--border);
+
+    z-index: 900;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   NAV TITLE
+========================================= */
+
+.nav-title {
+
+    padding: 0 12px 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--green-light);
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   NAV ITEMS
+========================================= */
+
+.nav-item {
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px 12px;
+
+    margin-bottom: 3px;
+
+    color: #a9b0a4;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    border-left: 3px solid transparent;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+}
+
+
+.nav-item span {
+
+    width: 17px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+.nav-item:hover {
+
+    background: rgba(114, 140, 88, 0.10);
+
+    color: white;
+}
+
+
+/* =========================================
+   ACTIVE NAV ITEM
+========================================= */
+
+.nav-item.active {
+
+    background: rgba(114, 140, 88, 0.14);
+
+    border-left-color: var(--green-light);
+
+    color: white;
+}
+
+
+/* =========================================
+   MANAGEMENT BUTTON FIX
+========================================= */
+
+.management-nav {
+
+    -webkit-appearance: none;
+
+    appearance: none;
+
+    background: transparent;
+
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+
+    border-left: 3px solid transparent;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    outline: none;
+}
+
+
+.management-nav:hover {
+
+    background: rgba(114, 140, 88, 0.10);
+
+    color: white;
+}
+
+
+.management-nav.active {
+
+    background: rgba(114, 140, 88, 0.14);
+
+    border-left-color: var(--green-light);
+
+    color: white;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+
+    width: calc(100% - 210px);
+
+    margin-left: 210px;
+
+    margin-top: 68px;
+
+    min-height: calc(100vh - 68px);
+
+    padding: 20px 24px 15px;
+
+    transition: 0.3s;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.page-heading {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+
+.section-label {
+
+    color: var(--green-light);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 6px;
+}
+
+
+.page-heading h1 {
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    margin-bottom: 6px;
+}
+
+
+.page-heading p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   SYSTEM CLOCK
+========================================= */
+
+.system-clock {
+
+    color: var(--green-light);
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    padding-bottom: 4px;
+}
+
+
+/* =========================================
+   SECURITY BANNER
+========================================= */
+
+.security-banner {
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 17px;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(114, 140, 88, 0.13),
+            rgba(13, 16, 14, 0.70)
+        );
+
+    border: 1px solid rgba(154, 174, 118, 0.22);
+
+    border-left: 3px solid var(--green-light);
+}
+
+
+.security-icon {
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(114, 140, 88, 0.12);
+
+    border: 1px solid var(--border);
+
+    font-size: 17px;
+}
+
+
+.security-banner strong {
+
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: var(--green-light);
+
+    margin-bottom: 4px;
+}
+
+
+.security-banner p {
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   MANAGEMENT GRID
+========================================= */
+
+.management-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   MANAGEMENT PANEL
+========================================= */
+
+.management-panel {
+
+    background: var(--panel);
+
+    border: 1px solid var(--border);
+
+    padding: 18px;
+
+    min-height: 260px;
+
+    transition: 0.2s;
+}
+
+
+.management-panel:hover {
+
+    border-color:
+        rgba(154, 174, 118, 0.42);
+
+    background:
+        rgba(15, 19, 16, 0.95);
+}
+
+
+/* =========================================
+   PANEL HEADER
+========================================= */
+
+.panel-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+
+.panel-tag {
+
+    display: block;
+
+    color: var(--green-light);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+
+.panel-header h2 {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--white);
+}
+
+
+.panel-icon {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(114, 140, 88, 0.10);
+
+    border: 1px solid var(--border);
+
+    color: var(--green-light);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   PANEL DESCRIPTION
+========================================= */
+
+.panel-description {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    min-height: 33px;
+
+    margin-bottom: 14px;
+}
+
+
+/* =========================================
+   ACTION LIST
+========================================= */
+
+.action-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+/* =========================================
+   MANAGEMENT ACTION
+========================================= */
+
+.management-action {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 9px 11px;
+
+    border: 1px solid rgba(150, 165, 130, 0.18);
+
+    background: rgba(20, 24, 20, 0.72);
+
+    color: var(--white);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.management-action > span {
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(114, 140, 88, 0.12);
+
+    color: var(--green-light);
+
+    font-size: 15px;
+
+    flex-shrink: 0;
+}
+
+
+.management-action div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.management-action strong {
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.management-action small {
+
+    font-size: 9px;
+
+    color: var(--muted);
+}
+
+
+.management-action:hover {
+
+    background: rgba(114, 140, 88, 0.12);
+
+    border-color:
+        rgba(154, 174, 118, 0.35);
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   DANGER ACTION
+========================================= */
+
+.management-action.danger > span {
+
+    color: var(--red);
+
+    background: rgba(217, 75, 61, 0.08);
+}
+
+
+.management-action.danger:hover {
+
+    background: rgba(217, 75, 61, 0.08);
+
+    border-color:
+        rgba(217, 75, 61, 0.30);
+}
+
+
+/* =========================================
+   SYSTEM INFORMATION
+========================================= */
+
+.system-information {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    padding: 13px 15px;
+
+    background: rgba(13, 16, 14, 0.88);
+
+    border: 1px solid var(--border);
+}
+
+
+.system-information > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.info-label {
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--muted);
+}
+
+
+.system-information strong {
+
+    font-size: 9px;
+
+    color: var(--green-light);
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.page-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 12px 2px 0;
+
+    color: #596057;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   PASSWORD MODAL OVERLAY
+========================================= */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 2000;
+}
+
+
+.modal-overlay.show {
+
+    display: flex;
+}
+
+
+/* =========================================
+   PASSWORD MODAL
+========================================= */
+
+.password-modal {
+
+    position: relative;
+
+    width: min(420px, calc(100% - 35px));
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 25, 21, 0.98),
+            rgba(9, 12, 10, 0.98)
+        );
+
+    border: 1px solid
+        rgba(154, 174, 118, 0.32);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55);
+
+    text-align: center;
+}
+
+
+/* =========================================
+   CLOSE MODAL
+========================================= */
+
+.close-modal {
+
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.close-modal:hover {
+
+    color: white;
+}
+
+
+/* =========================================
+   LOCK SYMBOL
+========================================= */
+
+.lock-symbol {
+
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(114, 140, 88, 0.12);
+
+    border: 1px solid var(--border);
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   MODAL HEADING
+========================================= */
+
+.password-modal h2 {
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.password-modal p {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   PASSWORD FORM
+========================================= */
+
+.password-modal form {
+
+    text-align: left;
+}
+
+
+.password-modal label {
+
+    display: block;
+
+    color: var(--green-light);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+
+.password-modal input {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    background: rgba(5, 8, 6, 0.90);
+
+    border: 1px solid
+        rgba(150, 165, 130, 0.25);
+
+    color: var(--white);
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+
+.password-modal input:focus {
+
+    border-color: var(--green-light);
+
+    box-shadow:
+        0 0 0 2px rgba(154, 174, 118, 0.08);
+}
+
+
+.password-modal input::placeholder {
+
+    color: #596057;
+}
+
+
+/* =========================================
+   PASSWORD ERROR
+========================================= */
+
+.password-error {
+
+    min-height: 18px;
+
+    padding-top: 7px;
+
+    color: var(--red);
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   AUTHENTICATE BUTTON
+========================================= */
+
+.authenticate-btn {
+
+    width: 100%;
+
+    height: 42px;
+
+    margin-top: 7px;
+
+    border: 1px solid var(--green-dark);
+
+    background:
+        rgba(114, 140, 88, 0.18);
+
+    color: var(--green-light);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.authenticate-btn:hover {
+
+    background:
+        rgba(114, 140, 88, 0.30);
+
+    border-color: var(--green-light);
+
+    color: white;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.side-nav::-webkit-scrollbar {
+
+    width: 4px;
+}
+
+
+.side-nav::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+.side-nav::-webkit-scrollbar-thumb {
+
+    background: var(--green-dark);
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .system-status {
+
+        display: none;
+    }
+
+
+    .management-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .system-information {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .side-nav {
+
+        width: 190px;
+
+        transform: translateX(-100%);
+
+        transition: 0.3s;
+    }
+
+
+    .side-nav.open {
+
+        transform: translateX(0);
+    }
+
+
+    .main-content {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 17px 14px;
+    }
+
+
+    .brand span {
+
+        display: none;
+    }
+
+
+    .nav-right {
+
+        gap: 8px;
+
+        padding-right: 10px;
+    }
+
+
+    .profile-mini div {
+
+        display: none;
+    }
+
+
+    .page-heading {
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .page-heading h1 {
+
+        font-size: 20px;
+    }
+
+
+    .system-clock {
+
+        font-size: 10px;
+    }
+
+
+    .security-banner {
+
+        align-items: flex-start;
+    }
+
+
+    .management-panel {
+
+        padding: 15px;
+    }
+
+
+    .page-footer {
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+}

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SurakshaNetra | Command Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         TOP NAVBAR
+    =============================== -->
+
+    <header class="top-navbar">
+
+        <button id="menuBtn" class="menu-btn">
+            ☰
+        </button>
+
+        <div class="brand">
+
+            <img src="LOGO.png" alt="SurakshaNetra Logo">
+
+            <div class="brand-text">
+                <h2>SURAKSHANETRA</h2>
+                <span>TACTICAL SURVEILLANCE SYSTEM</span>
+            </div>
+
+        </div>
+
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            SYSTEM ONLINE
+
+        </div>
+
+
+        <!-- Notification -->
+
+        <div class="notification-wrapper">
+
+            <button id="notificationBtn"
+                    class="notification-btn">
+
+                🔔
+
+                <span id="notificationCount"
+                      class="notification-count">
+                    0
+                </span>
+
+            </button>
+
+
+            <div id="notificationPanel"
+                 class="notification-panel">
+
+                <div class="notification-header">
+
+                    <strong>
+                        NOTIFICATIONS
+                    </strong>
+
+                    <button id="clearNotifications">
+                        CLEAR
+                    </button>
+
+                </div>
+
+                <div id="notificationList"
+                     class="notification-list">
+
+                    <p class="no-notifications">
+                        No new notifications
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Officer -->
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+
+                <img id="profileAvatar"
+                     src=""
+                     alt="Officer">
+
+            </div>
+
+            <div class="profile-info">
+
+                <strong id="dashboardOfficerName">
+                    Officer
+                </strong>
+
+                <span id="dashboardOfficerRank">
+                    COMMAND
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <aside id="sideNav" class="side-nav">
+
+    <div class="nav-title">COMMAND</div>
+
+    <a href="DASHBOARD.html" class="nav-item">
+        <span>▣</span> Dashboard
+    </a>
+
+    <a href="camera.html" class="nav-item">
+        <span>◉</span> Cameras
+    </a>
+
+    <a href="unusual-clips.html" class="nav-item">
+        <span>◌</span> Unusual Clips
+    </a>
+
+
+    <a href="setting.html" class="nav-item">
+        <span>⚙</span> Settings
+    </a>
+
+    <button id="managementNav" class="nav-item management-nav" type="button">
+        <span>🔒</span> Management
+    </button>
+
+</aside>
+
+    <!-- ==============================
+         MAIN
+    =============================== -->
+
+    <main id="mainContent" class="main-content">
+
+
+        <!-- Heading -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <span class="section-label">
+                    COMMAND CENTER
+                </span>
+
+                <h1>
+                    Surveillance Overview
+                </h1>
+
+            </div>
+
+
+            <div class="system-time">
+
+                <span>
+                    LOCAL SYSTEM TIME
+                </span>
+
+                <strong id="systemClock">
+                    00:00:00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==============================
+             STAT CARDS
+        =============================== -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ▦
+                </div>
+
+                <div>
+
+                    <span>
+                        TOTAL SECTORS
+                    </span>
+
+                    <strong id="sectorTotal">
+                        6
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <span>
+                        ACTIVE CAMERAS
+                    </span>
+
+                    <strong id="cameraTotal">
+                        24
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◌
+                </div>
+
+                <div>
+
+                    <span>
+                        UNUSUAL CLIPS
+                    </span>
+
+                    <strong id="clipTotal">
+                        3
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card alarm-card">
+
+                <div class="stat-icon">
+                    ⚠
+                </div>
+
+                <div>
+
+                    <span>
+                        ACTIVE ALARMS
+                    </span>
+
+                    <strong id="alarmTotal">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             MAIN DASHBOARD
+        =============================== -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- AREAS -->
+
+            <div class="panel areas-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            SURVEILLANCE
+                        </span>
+
+                        <h2>
+                            Monitored Areas
+                        </h2>
+
+                    </div>
+
+                    <span class="live-status">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div id="areasContainer"
+                     class="areas-container">
+                </div>
+
+            </div>
+
+
+
+            <!-- TACTICAL LOG -->
+
+            <div class="panel log-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            EVENT STREAM
+                        </span>
+
+                        <h2>
+                            Tactical Log
+                        </h2>
+
+                    </div>
+
+                    <span class="live-status">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div id="tacticalLog"
+                     class="tactical-log">
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==============================
+             TEST CONTROL
+        =============================== -->
+
+        <section class="control-panel">
+
+            <div>
+
+                <span class="section-label">
+                    DEVELOPMENT MODE
+                </span>
+
+                <h2>
+                    System Test Controls
+                </h2>
+
+                <p>
+                    Temporary frontend testing.
+                    Backend AI alerts will be connected later.
+                </p>
+
+            </div>
+
+
+            <button id="createAlarmBtn"
+                    class="test-alarm-btn">
+
+                CREATE TEST ALARM
+
+            </button>
+
+        </section>
+
+
+
+        <!-- ==============================
+             FOOTER
+        =============================== -->
+
+        <footer class="system-bar">
+
+            <div>
+
+                <span class="status-dot"></span>
+
+                BACKEND CONNECTION:
+
+                <strong id="backendStatus">
+                    SIMULATION
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                LAST SYNC:
+
+                <strong id="lastSync">
+                    --:--:--
+                </strong>
+
+            </div>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- ==============================
+         RANK POPUP
+    =============================== -->
+
+    <div id="rankModal"
+         class="rank-modal">
+
+        <div class="rank-modal-box">
+
+
+            <span class="section-label">
+                OFFICER PROFILE
+            </span>
+
+
+            <h2>
+                Complete Your Profile
+            </h2>
+
+
+            <p class="rank-subtitle">
+
+                Enter your rank to continue
+                to the command dashboard.
+
+            </p>
+
+
+            <div class="rank-avatar">
+
+                <img id="rankProfileImage"
+                     src=""
+                     alt="Officer">
+
+            </div>
+
+
+            <div class="officer-name-display">
+
+                <span>
+                    OFFICER
+                </span>
+
+                <strong id="rankOfficerName">
+                    Officer
+                </strong>
+
+            </div>
+
+
+            <div class="rank-input-group">
+
+                <label for="officerRankInput">
+                    OFFICER RANK
+                </label>
+
+                <input
+                    type="text"
+                    id="officerRankInput"
+                    placeholder="Enter your rank"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <button id="saveRankBtn"
+                    class="save-rank-btn">
+
+                CONTINUE
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

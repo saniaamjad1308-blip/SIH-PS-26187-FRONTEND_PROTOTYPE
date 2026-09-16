@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SurakshaNetra | Settings</title>
+
+    <link rel="stylesheet" href="setting.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOP NAVBAR
+    ========================================== -->
+
+    <header class="top-navbar">
+
+        <button id="menuBtn" class="menu-btn" type="button">
+            ☰
+        </button>
+
+
+        <div class="brand">
+
+            <img src="LOGO.png" alt="SurakshaNetra Logo">
+
+            <div class="brand-text">
+                <h2>SURAKSHANETRA</h2>
+                <span>TACTICAL SURVEILLANCE SYSTEM</span>
+            </div>
+
+        </div>
+
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            SYSTEM ONLINE
+
+        </div>
+
+
+        <!-- =====================================
+             NOTIFICATION
+        ====================================== -->
+
+        <div class="notification-wrapper">
+
+            <button id="notificationBtn"
+                    class="notification-btn"
+                    type="button">
+
+                🔔
+
+                <span id="notificationCount"
+                      class="notification-count">
+                    0
+                </span>
+
+            </button>
+
+
+            <div id="notificationPanel"
+                 class="notification-panel">
+
+                <div class="notification-header">
+
+                    <strong>
+                        NOTIFICATIONS
+                    </strong>
+
+                    <button id="clearNotifications"
+                            type="button">
+                        CLEAR
+                    </button>
+
+                </div>
+
+
+                <div id="notificationList"
+                     class="notification-list">
+
+                    <p class="no-notifications">
+                        No new notifications
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             OFFICER PROFILE
+        ====================================== -->
+
+        <div class="profile">
+
+            <div class="profile-avatar">
+
+                <img id="profileAvatar"
+                     src=""
+                     alt="Officer">
+
+            </div>
+
+
+            <div class="profile-info">
+
+                <strong id="dashboardOfficerName">
+                    Officer
+                </strong>
+
+                <span id="dashboardOfficerRank">
+                    COMMAND
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside id="sideNav" class="side-nav">
+
+        <div class="nav-title">
+            COMMAND
+        </div>
+
+
+        <a href="DASHBOARD.html"
+           class="nav-item">
+
+            <span>▣</span>
+            Dashboard
+
+        </a>
+
+
+        <a href="camera.html"
+           class="nav-item">
+
+            <span>◉</span>
+            Cameras
+
+        </a>
+
+
+        <a href="unusual-clips.html"
+           class="nav-item">
+
+            <span>◌</span>
+            Unusual Clips
+
+        </a>
+
+
+        <a href="setting.html"
+           class="nav-item">
+
+            <span>⚙</span>
+            Settings
+
+        </a>
+
+
+        <button id="managementNav"
+                class="nav-item management-nav"
+                type="button">
+
+            <span>🔒</span>
+            Management
+
+        </button>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main id="mainContent"
+          class="main-content">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="page-heading">
+
+            <div>
+
+                <span class="section-label">
+                    SYSTEM CONTROL
+                </span>
+
+                <h1>
+                    Settings
+                </h1>
+
+            </div>
+
+
+            <div class="system-time">
+
+                <span>
+                    LOCAL SYSTEM TIME
+                </span>
+
+                <strong id="systemClock">
+                    00:00:00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             ACCOUNT SECTION
+        ====================================== -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        OFFICER ACCOUNT
+                    </span>
+
+                    <h2>
+                        Profile Information
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="profile-settings-panel">
+
+
+                <!-- PROFILE PICTURE -->
+
+                <div class="profile-picture-section">
+
+                    <div class="large-profile-avatar">
+
+                        <img id="settingsProfileImage"
+                             src=""
+                             alt="Officer Profile">
+
+                    </div>
+
+
+                    <div class="picture-info">
+
+                        <span class="field-label">
+                            PROFILE PICTURE
+                        </span>
+
+                        <p>
+                            Update your officer profile image.
+                        </p>
+
+                        <button id="changePictureBtn"
+                                class="secondary-btn"
+                                type="button">
+
+                            CHANGE PICTURE
+
+                        </button>
+
+                        <input id="profilePictureInput"
+                               type="file"
+                               accept="image/*"
+                               hidden>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NAME -->
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <span class="field-label">
+                            OFFICER NAME
+                        </span>
+
+                        <strong id="nameDisplay">
+                            Officer
+                        </strong>
+
+                    </div>
+
+
+                    <button id="editNameBtn"
+                            class="secondary-btn"
+                            type="button">
+
+                        EDIT
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- RANK -->
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <span class="field-label">
+                            OFFICER RANK
+                        </span>
+
+                        <strong id="rankDisplay">
+                            COMMAND
+                        </strong>
+
+                    </div>
+
+
+                    <button id="editRankBtn"
+                            class="secondary-btn"
+                            type="button">
+
+                        EDIT
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- UID -->
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <span class="field-label">
+                            OFFICER UID
+                        </span>
+
+                        <strong id="uidDisplay">
+                            NOT AVAILABLE
+                        </strong>
+
+                    </div>
+
+
+                    <span class="locked-label">
+                        🔒 ACCOUNT ID
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SECURITY
+        ====================================== -->
+
+        <section class="settings-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        ACCOUNT SECURITY
+                    </span>
+
+                    <h2>
+                        Password & Security
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="security-panel">
+
+                <div class="setting-row">
+
+                    <div class="setting-info">
+
+                        <span class="field-label">
+                            PASSWORD
+                        </span>
+
+                        <strong>
+                            ••••••••••••
+                        </strong>
+
+                    </div>
+
+
+                    <button id="changePasswordBtn"
+                            class="secondary-btn"
+                            type="button">
+
+                        CHANGE PASSWORD
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SESSION
+        ====================================== -->
+
+        <section class="settings-section session-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        SESSION CONTROL
+                    </span>
+
+                    <h2>
+                        Current Session
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="session-panel">
+
+                <div>
+
+                    <span class="field-label">
+                        LOGGED IN AS
+                    </span>
+
+                    <strong id="sessionOfficerName">
+                        Officer
+                    </strong>
+
+                    <p id="sessionUid">
+                        UID: NOT AVAILABLE
+                    </p>
+
+                </div>
+
+
+                <button id="logoutBtn"
+                        class="logout-btn"
+                        type="button">
+
+                    LOG OUT
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer class="system-bar">
+
+            <div>
+
+                <span class="status-dot"></span>
+
+                ACCOUNT STATUS:
+
+                <strong>
+                    ACTIVE
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                LAST UPDATE:
+
+                <strong id="lastUpdate">
+                    --:--:--
+                </strong>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =========================================
+         EDIT NAME MODAL
+    ========================================== -->
+
+    <div id="nameModal"
+         class="modal">
+
+        <div class="modal-box">
+
+            <span class="section-label">
+                PROFILE EDIT
+            </span>
+
+            <h2>
+                Edit Officer Name
+            </h2>
+
+            <div class="input-group">
+
+                <label for="nameInput">
+                    OFFICER NAME
+                </label>
+
+                <input id="nameInput"
+                       type="text"
+                       placeholder="Enter officer name"
+                       autocomplete="off">
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button id="cancelNameBtn"
+                        class="cancel-btn"
+                        type="button">
+                    CANCEL
+                </button>
+
+                <button id="saveNameBtn"
+                        class="save-btn"
+                        type="button">
+                    SAVE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         EDIT RANK MODAL
+    ========================================== -->
+
+    <div id="rankModal"
+         class="modal">
+
+        <div class="modal-box">
+
+            <span class="section-label">
+                PROFILE EDIT
+            </span>
+
+            <h2>
+                Edit Officer Rank
+            </h2>
+
+            <div class="input-group">
+
+                <label for="rankInput">
+                    OFFICER RANK
+                </label>
+
+                <input id="rankInput"
+                       type="text"
+                       placeholder="Enter officer rank"
+                       autocomplete="off">
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button id="cancelRankBtn"
+                        class="cancel-btn"
+                        type="button">
+                    CANCEL
+                </button>
+
+                <button id="saveRankBtn"
+                        class="save-btn"
+                        type="button">
+                    SAVE
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         CHANGE PASSWORD MODAL
+    ========================================== -->
+
+    <div id="passwordModal"
+         class="modal">
+
+        <div class="modal-box">
+
+            <span class="section-label">
+                ACCOUNT SECURITY
+            </span>
+
+            <h2>
+                Change Password
+            </h2>
+
+
+            <div class="input-group">
+
+                <label for="currentPassword">
+                    CURRENT PASSWORD
+                </label>
+
+                <input id="currentPassword"
+                       type="password"
+                       placeholder="Enter current password">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="newPassword">
+                    NEW PASSWORD
+                </label>
+
+                <input id="newPassword"
+                       type="password"
+                       placeholder="Enter new password">
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="confirmPassword">
+                    CONFIRM PASSWORD
+                </label>
+
+                <input id="confirmPassword"
+                       type="password"
+                       placeholder="Confirm new password">
+
+            </div>
+
+
+            <p id="passwordMessage"
+               class="form-message">
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button id="cancelPasswordBtn"
+                        class="cancel-btn"
+                        type="button">
+
+                    CANCEL
+
+                </button>
+
+
+                <button id="savePasswordBtn"
+                        class="save-btn"
+                        type="button">
+
+                    UPDATE PASSWORD
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         LOGOUT CONFIRMATION
+    ========================================== -->
+
+    <div id="logoutModal"
+         class="modal">
+
+        <div class="modal-box logout-box">
+
+            <span class="section-label">
+                SESSION CONTROL
+            </span>
+
+            <h2>
+                Log Out?
+            </h2>
+
+            <p>
+                You will be signed out of your current
+                SurakshaNetra session.
+            </p>
+
+
+            <div class="modal-actions">
+
+                <button id="cancelLogoutBtn"
+                        class="cancel-btn"
+                        type="button">
+
+                    CANCEL
+
+                </button>
+
+
+                <button id="confirmLogoutBtn"
+                        class="logout-confirm-btn"
+                        type="button">
+
+                    LOG OUT
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="notifications.js"></script>
+    <script src="setting.js"></script>
+
+</body>
+
+</html>
